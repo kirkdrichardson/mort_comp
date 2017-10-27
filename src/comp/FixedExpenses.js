@@ -1,6 +1,8 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 import { moneyize } from '../lib/formatting_helpers'
 
+@observer
 class FixedExpenses extends React.Component {
 
   totalExpenses = () => {
