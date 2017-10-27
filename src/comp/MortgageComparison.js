@@ -1,10 +1,13 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 
-import LoanAmountDetails from './LoanAmountDetails.js'
-import FixedExpenses from './FixedExpenses.js'
-import LoanDetails from './LoanDetails.js'
-import ComparisonResults from './ComparisonResults.js'
-import Mortgage from '../lib/mortgage.js'
+import MortgageComparisonStore from './MortgageComparisonStore.js';
+import LoanAmountDetails from './LoanAmountDetails.js';
+import FixedExpenses from './FixedExpenses.js';
+import LoanDetails from './LoanDetails.js';
+import ComparisonResults from './ComparisonResults.js';
+import Mortgage from '../lib/mortgage.js';
+
 
 class MortgageComparison extends React.Component {
 
@@ -58,6 +61,7 @@ class MortgageComparison extends React.Component {
   }
 
   render() {
+      console.log(`storeeeeeeee is ${this.props.store.MortgageComparisonStore.totalExpenses}`)
     return (
       <div>
         <LoanAmountDetails updateCommonMortgageInput={this.updateCommonMortgageInput} loanAmount={this.state.loanAmount} />
