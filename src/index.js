@@ -5,13 +5,12 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import { Provider } from 'mobx-react';
-import MortgageComparisonStore from './stores/MortgageComparisonStore.js';
-import LoanAmountDetailsStore from './stores/LoanAmountDetailsStore.js';
+
+// importing instantiation of RootStore class
+import rootStore from './stores/RootStore.js';
 
 const Root = (
-  <Provider
-      MortgageComparisonStore={MortgageComparisonStore}
-      LoanAmountDetailsStore={LoanAmountDetailsStore}>
+  <Provider rootStore={rootStore}>
     <App />
   </Provider>
 );

@@ -6,11 +6,11 @@ import LoanDetails from './LoanDetails.js';
 import ComparisonResults from './ComparisonResults.js';
 
 
-@inject('MortgageComparisonStore')
+@inject('rootStore')
 @observer
 class MortgageComparison extends React.Component {
   render() {
-    const store = this.props.MortgageComparisonStore;
+    const store = this.props.rootStore.mortgageComparisonStore;
     return (
       <div>
         <LoanAmountDetails updateCommonMortgageInput={store.updateCommonMortgageInput} loanAmount={store.loanAmount} />

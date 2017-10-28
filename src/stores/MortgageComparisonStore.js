@@ -1,7 +1,11 @@
 import { observable, computed, action } from 'mobx';
 import Mortgage from '../lib/mortgage.js';
 
-class MortgageComparisonStoreSuper {
+export default class MortgageComparisonStore {
+  constructor(rootstore) {
+  this.rootStore = rootstore;
+}
+
   @observable mort15 = new Mortgage(400000, 0.03250, 15, 350.00);
   @observable mort30 = new Mortgage(400000, 0.03930, 30, 350.00);
 
@@ -41,5 +45,5 @@ class MortgageComparisonStoreSuper {
 }
 
 
-const MortgageComparisonStore = new MortgageComparisonStoreSuper();
-export default MortgageComparisonStore;
+// const MortgageComparisonStore = new MortgageComparisonStoreSuper();
+// export default MortgageComparisonStore;
